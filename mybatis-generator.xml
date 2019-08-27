@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE generatorConfiguration
+  PUBLIC "-//mybatis.org//DTD MyBatis Generator Configuration 1.0//EN"
+  "http://mybatis.org/dtd/mybatis-generator-config_1_0.dtd">
+
+<generatorConfiguration>
+
+	<context id="DB2Tables" targetRuntime="MyBatis3">
+	<!-- 	<jdbcConnection driverClass="com.mysql.jdbc.Driver" connectionURL="jdbc:mysql://localhost:3306/nanyuetong?characterEncoding=utf-8" 
+			userId="root" password="xuekui123"> </jdbcConnection> -->
+		<!-- <jdbcConnection driverClass="com.mysql.jdbc.Driver"
+			connectionURL="jdbc:mysql://10.30.0.214/bus_ticket?characterEncoding=utf-8"
+			userId="developer" password="456075">
+		</jdbcConnection> -->
+		<jdbcConnection driverClass="com.mysql.jdbc.Driver"
+			connectionURL="jdbc:mysql://10.30.0.211/hydra2?characterEncoding=utf-8"
+			userId="developer" password="456075">
+		</jdbcConnection>
+
+		<javaTypeResolver>
+			<property name="forceBigDecimals" value="false" />
+		</javaTypeResolver>
+
+		<!-- 设置Java类生成的位置 -->
+		<javaModelGenerator targetPackage="com.MyMallProject.model"
+			targetProject=".\src\main\java">
+			<property name="enableSubPackages" value="true" />
+			<property name="trimStrings" value="true" />
+		</javaModelGenerator>
+
+		<sqlMapGenerator targetPackage="com.MyMallProject.mapper"
+			targetProject=".\src\main\resources">
+			<property name="enableSubPackages" value="true" />
+		</sqlMapGenerator>
+
+		<javaClientGenerator type="XMLMAPPER"
+			targetPackage="com.MyMallProject.mapper" targetProject=".\src\main\resources">
+			<property name="enableSubPackages" value="true" />
+		</javaClientGenerator>
+
+		<!-- <table tableName="xiaomai_order"></table> -->
+		<table tableName="fleet_vechicle"></table>
+		<table tableName="fleet_vechicle_cert"></table>
+
+	</context>
+</generatorConfiguration>
